@@ -1,8 +1,25 @@
+
 .button {
     text-decoration: none;
 }
 
 .box {
-    
-    text-decoration: dashed;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+.navbar {
+    height: 60px;
+}
+.footer {
+    height: 60px;
+}
+.container {
+    min-height: calc(100vh - 120px);
+}
+.delete-checkbox {
+    margin: 0;
+    padding: 0;
+}
+.box-content {
+    margin: 20px;
 }

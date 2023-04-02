@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar border-bottom mx-5">
     <a class="navbar-brand" href="#"><?php echo getPageTitle(); ?></a>
     <form class="form-inline my-2 my-lg-0">
         

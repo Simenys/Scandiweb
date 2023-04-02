@@ -7,8 +7,8 @@
 <!-- Navbar -->
 <?php include "includes/nav.php"; ?>
 
-    <div class="container">
-        <div class="row">
+    <div class="container min-vw-100 px-5">
+        <div class="row gy-4 pt-5">
                 <?php
                     $query = "SELECT * FROM dvd ";
                     $select_all_categories_query = mysqli_query($conn, $query);
@@ -19,13 +19,15 @@
                         $size = $row['Size'];
                 ?>
                 
-                    <div class="col-md-3 box" style="background-color:#33475b">
-                        <input class="form-check-input delete-checkbox" type="checkbox" value="" id="flexCheckDefault">
+                    <div class="col-lg-3 col-md-6 col-xs-12">
+                        <div class="col box">
+                        <input class="form-check-input delete-checkbox" type="checkbox" value="">
                         <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
                         <p><?php echo $sku ?></p>
                         <p><?php echo $name ?></p>
                         <p><?php echo $price ?></p>
                         <p><?php echo $size ?></p>
+                        </div>
                     </div>
                        
                 <?php
@@ -42,13 +44,15 @@
                         $weight = $row['Weight'];
                 ?>
                 
-                    <div class="col-md-3 box" style="background-color:#33475b">
-                        <input class="form-check-input delete-checkbox" type="checkbox" value="" id="flexCheckDefault">
+                    <div class="col-lg-3 col-md-6 col-xs-12">
+                        <div class="col box">
+                        <input class="form-check-input delete-checkbox" type="checkbox" value="">
                         <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
                         <p><?php echo $sku ?></p>
                         <p><?php echo $name ?></p>
                         <p><?php echo $price ?></p>
                         <p><?php echo $weight ?></p>
+                    </div>
                     </div>
                        
                 <?php
@@ -67,26 +71,28 @@
                         $dimLength = $row['DimLength'];
                 ?>
                 
-                    <div class="col-md-3 box" style="background-color:#33475b">
-                        <input class="form-check-input delete-checkbox" type="checkbox" value="" id="flexCheckDefault">
+                    <div class="col-lg-3 col-md-6 col-xs-12">
+                        <div class="col box">
+                            <div class="box-content">
+                        <input class="form-check-input delete-checkbox" type="checkbox" value="">
                         <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
                         <p><?php echo $sku ?></p>
                         <p><?php echo $name ?></p>
                         <p><?php echo $price ?></p>
                         <p><?php echo strval($dimHeight) . 'x' . strval($dimWidth) . 'x' . strval($dimLength) ?></p>
+                        </div>
+                        </div>
                     </div>
                        
                 <?php
                     } 
                 ?>
-            
         </div> 
     </div>
+<?php include "includes/footer.php" ?>    
     
 
 
 
 
 
-</body>
-</html>
