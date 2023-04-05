@@ -48,3 +48,28 @@ function getPageButton2() {
 }
 
 ?>
+
+<!-- Get typeSwitcher -->
+<?php 
+	$selected = '';
+
+	function get_options() {
+	$typeOptions = array('Type Switcher', 'SKU', 'Name', 'Price');
+	$typeSwitcher = '';
+	for($i=0; $i<count($typeOptions); $i++) {
+		$typeSwitcher .= '<option '
+							. ($_GET['typeSwitcher'] == $typeOptions[$i] ? 'selected="selected"' : '' ) . '>'
+							. $typeOptions[$i]
+							. '</options>';
+	}
+		echo $typeSwitcher;
+	
+	}
+	if(isset($_POST['typeOptions'])) {
+		$selected = $_POST['typeOptions'];
+		echo $selected;
+	}
+
+
+
+?>
