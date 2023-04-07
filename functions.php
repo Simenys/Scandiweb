@@ -35,7 +35,7 @@ function getPageButton1() {
 <!-- Get page button2 -->
 <?php
 function getPageButton2() {
-	$pageButton1 = "Button2"; // Set default button1
+	$pageButton2 = "Button2"; // Set default button1
 
 	// Check which page we're on and set the button1 accordingly
 	if ($_SERVER["PHP_SELF"] == "/Scandiweb/index.php") {
@@ -46,30 +46,5 @@ function getPageButton2() {
 
 	return $pageButton2;
 }
-
-?>
-
-<!-- Get typeSwitcher -->
-<?php 
-	$selected = '';
-
-	function get_options() {
-	$typeOptions = array('Type Switcher', 'SKU', 'Name', 'Price');
-	$typeSwitcher = '';
-	for($i=0; $i<count($typeOptions); $i++) {
-		$typeSwitcher .= '<option '
-							. ($_GET['typeSwitcher'] == $typeOptions[$i] ? 'selected="selected"' : '' ) . '>'
-							. $typeOptions[$i]
-							. '</options>';
-	}
-		echo $typeSwitcher;
-	
-	}
-	if(isset($_POST['typeOptions'])) {
-		$selected = $_POST['typeOptions'];
-		echo $selected;
-	}
-
-
 
 ?>
