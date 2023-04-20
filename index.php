@@ -6,7 +6,7 @@
 
 <!-- Navbar -->
 <?php include "includes/nav.php"; ?>
-
+    <form id="myForm" method="POST" action="index.php">
     <div class="container min-vw-100 px-5">
         <div class="row gy-4 pt-5">
             <!-- Select DVD -->
@@ -22,7 +22,7 @@
             ?>
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="col box">
-                    <input class="form-check-input delete-checkbox" type="checkbox" value="">
+                    <input class="form-check-input delete-checkbox" type="checkbox" value="<?php echo $row['SKU']; ?>" name="delete[<?php echo $row['SKU']; ?>]">
                     <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
                         <p><?php echo $sku ?></p>
                         <p><?php echo $name ?></p>
@@ -47,7 +47,7 @@
             ?>
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="col box">
-                    <input class="form-check-input delete-checkbox" type="checkbox" value="">
+                    <input class="form-check-input delete-checkbox" type="checkbox" value="<?php echo $row['SKU']; ?>" name="delete[<?php echo $row['SKU']; ?>]">
                     <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
                         <p><?php echo $sku ?></p>
                         <p><?php echo $name ?></p>
@@ -72,7 +72,7 @@
             ?>
                 <div class="col-lg-3 col-md-6 col-xs-12">
                     <div class="col box">
-                    <input class="form-check-input delete-checkbox" type="checkbox" value="">
+                    <input class="form-check-input delete-checkbox" type="checkbox" value="<?php echo $row['SKU']; ?>" name="delete[<?php echo $row['SKU']; ?>]">
                     <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
                         <p><?php echo $sku ?></p>
                         <p><?php echo $name ?></p>
@@ -86,5 +86,28 @@
 
 
         </div> 
+        
     </div>
+    <?php
+
+if (isset($_POST['mass_delete'])) {
+    if (isset($_POST['delete'])) {
+        $delete_checked = $_POST['delete'];
+
+        if (!empty($delete_checked)) {
+            foreach ($delete_checked as $sku) {
+                $delete_query = "DELETE FROM products WHERE SKU = '$sku'";
+                mysqli_query($conn, $delete_query);
+            }
+        // Redirect to the product list page after deleting the products
+        header("Refresh:0");
+        exit;
+    } 
+}
+} 
+
+?>
+    <input class="btn btn-outline-success my-2 my-sm-0" name='mass_delete' form="myForm" id='mass_delete' value="Mass Delete" type="submit"/>
+    <label for="mass_delete"></label>
+    </form>
 <?php include "includes/footer.php" ?>

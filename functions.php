@@ -38,7 +38,7 @@ function getPageButton2() {
 	$pageButton2 = "Button2"; // Set default button1
 
 	// Check which page we're on and set the button1 accordingly
-	if ($_SERVER["PHP_SELF"] == "/Scandiweb/index.php") {
+	if ($_SERVER["PHP_SELF"] == "/Scandiweb/Scandiweb/index.php") {
 		$pageButton2 = "MASS DELETE";
 	} elseif ($_SERVER["PHP_SELF"] == "/Scandiweb/add.php") {
 		$pageButton2 = "CANCEL";
@@ -47,4 +47,23 @@ function getPageButton2() {
 	return $pageButton2;
 }
 
+?>
+
+<!-- Delete checkbox -->
+<?php
+function massDelete() {
+if (isset($_POST['mass_delete'])) {
+    $delete_checked = $_POST['delete'];
+
+    if (!empty($delete_checked)) {
+        foreach ($delete_checked as $sku) {
+            $delete_query = "DELETE FROM products WHERE SKU = '$sku'";
+            mysqli_query($conn, $delete_query);
+        }
+        // Redirect to the product list page after deleting the products
+        header("Location: index.php");
+        exit;
+    }
+}
+}
 ?>
