@@ -107,7 +107,7 @@ if (isset($_POST['mass_delete'])) {
 } 
 
 ?>
-    <input class="btn btn-outline-success my-2 my-sm-0" name='mass_delete' form="myForm" id='mass_delete' value="Mass Delete" type="submit"/>
-    <label for="mass_delete"></label>
+    <input class="hidden" name="mass_delete" id="mass_delete" value='' type="submit"/>
+    
     </form>
 <?php include "includes/footer.php" ?>

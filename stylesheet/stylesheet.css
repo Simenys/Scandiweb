@@ -23,3 +23,6 @@
 .box-content {
     margin: 20px;
 }
+#mass_delete {
+    display: none;
+}
