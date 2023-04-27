@@ -2,10 +2,16 @@
 .button {
     text-decoration: none;
 }
-
 .box {
     border: 1px solid black;
     border-radius: 2px;
+    padding: 5px;
+}
+.product-details {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 .navbar {
     height: 60px;
@@ -17,12 +23,12 @@
     min-height: calc(100vh - 120px);
 }
 .delete-checkbox {
-    margin: 0;
+    margin-left: 0;
     padding: 0;
 }
-.box-content {
+/* .box-content {
     margin: 20px;
-}
+} */
 #mass_delete {
     display: none;
 }

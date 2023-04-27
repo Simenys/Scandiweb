@@ -4,9 +4,9 @@ function getPageTitle() {
 	$pageTitle = "Scandiweb"; // Set default title
 
 	// Check which page we're on and set the title accordingly
-	if ($_SERVER["PHP_SELF"] == "/Scandiweb/index.php") {
+	if ($_SERVER["PHP_SELF"] == "/Scandiweb/Scandiweb/index.php") {
 		$pageTitle = "Product List";
-	} elseif ($_SERVER["PHP_SELF"] == "/Scandiweb/add.php") {
+	} elseif ($_SERVER["PHP_SELF"] == "/Scandiweb/Scandiweb/add.php") {
 		$pageTitle = "Product Add";
 	}
 

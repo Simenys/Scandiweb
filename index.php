@@ -24,10 +24,12 @@
                     <div class="col box">
                     <input class="form-check-input delete-checkbox" type="checkbox" value="<?php echo $row['SKU']; ?>" name="delete[<?php echo $row['SKU']; ?>]">
                     <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
-                        <p><?php echo $sku ?></p>
-                        <p><?php echo $name ?></p>
-                        <p><?php echo $price ?></p>
-                        <p><?php echo $size ?></p>
+                        <div class="product-details">
+                            <p><?php echo $sku ?></p>
+                            <p><?php echo $name ?></p>
+                            <p><?php echo $price ?></p>
+                            <p><?php echo $size ?></p>
+                        </div>
                     </div>
                 </div>
             <?php
@@ -49,10 +51,12 @@
                     <div class="col box">
                     <input class="form-check-input delete-checkbox" type="checkbox" value="<?php echo $row['SKU']; ?>" name="delete[<?php echo $row['SKU']; ?>]">
                     <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
-                        <p><?php echo $sku ?></p>
-                        <p><?php echo $name ?></p>
-                        <p><?php echo $price ?></p>
-                        <p><?php echo $weight ?></p>
+                        <div class="product-details">
+                            <p><?php echo $sku ?></p>
+                            <p><?php echo $name ?></p>
+                            <p><?php echo $price ?></p>
+                            <p><?php echo $weight ?></p>
+                        </div>
                     </div>
                 </div>
             <?php
@@ -74,10 +78,12 @@
                     <div class="col box">
                     <input class="form-check-input delete-checkbox" type="checkbox" value="<?php echo $row['SKU']; ?>" name="delete[<?php echo $row['SKU']; ?>]">
                     <!-- <label class="form-check-label" for="flexCheckDefault"></label> -->
-                        <p><?php echo $sku ?></p>
-                        <p><?php echo $name ?></p>
-                        <p><?php echo $price ?></p>
-                        <p><?php echo $dim ?></p>
+                        <div class="product-details">
+                            <p><?php echo $sku ?></p>
+                            <p><?php echo $name ?></p>
+                            <p><?php echo $price ?></p>
+                            <p><?php echo $dim ?></p>
+                        </div>
                     </div>
                 </div>
             <?php
