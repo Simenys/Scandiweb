@@ -1,11 +1,23 @@
 <!-- Database conn -->
 <?php include "includes/db.php"; ?>
 
+<?php
+ob_start();
+?>
+
 <!-- Header -->
 <?php include "includes/header.php"; ?>
 
 <!-- Navbar -->
-<?php include "includes/nav.php"; ?>
+<nav class="navbar border-bottom mx-5">
+    <a class="navbar-brand" href="#"><?php echo getPageTitle(); ?></a>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0"><a class="button" href="add.php">ADD</a></button>
+        <label class="btn btn-outline-success my-2 my-sm-0" for="mass_delete">MASS DELETE</label>
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" name='mass_delete' form="myForm" id='mass_delete' value="Update" type="submit"><?php echo getPageButton2(); ?></button> -->
+    </form>
+</nav>
+<!-- Form - All products -->
     <form id="myForm" method="POST" action="index.php">
     <div class="container min-vw-100 px-5">
         <div class="row gy-4 pt-5">
@@ -105,15 +117,20 @@ if (isset($_POST['mass_delete'])) {
                 $delete_query = "DELETE FROM products WHERE SKU = '$sku'";
                 mysqli_query($conn, $delete_query);
             }
-        // Redirect to the product list page after deleting the products
-        header("Refresh:0");
+        // Refresh the product list page after deleting the products
+        header("Refresh:0; url=index.php");
         exit;
     } 
 }
 } 
 
 ?>
-    <input class="hidden" name="mass_delete" id="mass_delete" value='' type="submit"/>
+    <input class="hidden" type="submit" name="mass_delete" id="mass_delete" value="" />
     
     </form>
+
+<?php
+ob_end_flush();
+?>
+
 <?php include "includes/footer.php" ?>

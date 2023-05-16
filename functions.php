@@ -15,21 +15,21 @@ function getPageTitle() {
 
 ?>
 
+<!-- Bellow functions for getPageButtons is a useful practice, but didint worked in this case, saving in case forr need in future -->
 <!-- Get page button1 -->
 <?php
 function getPageButton1() {
 	$pageButton1 = "Button1"; // Set default button1
 
 	// Check which page we're on and set the button1 accordingly
-	if ($_SERVER["PHP_SELF"] == "/Scandiweb/index.php") {
+	if ($_SERVER["PHP_SELF"] == "/Scandiweb/Scandiweb/index.php") {
 		$pageButton1 = "ADD";
-	} elseif ($_SERVER["PHP_SELF"] == "/Scandiweb/add.php") {
+	} elseif ($_SERVER["PHP_SELF"] == "/Scandiweb/Scandiweb/add.php") {
 		$pageButton1 = "SAVE";
 	}
 
 	return $pageButton1;
 }
-
 ?>
 
 <!-- Get page button2 -->

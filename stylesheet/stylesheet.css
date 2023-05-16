@@ -22,13 +22,20 @@
 .container {
     min-height: calc(100vh - 120px);
 }
-.delete-checkbox {
-    margin-left: 0;
-    padding: 0;
+/* Define the border color for unchecked checkboxes */
+.delete-checkbox:not(:checked) {
+    border: 1px solid black;
+}
+/* Define the border color for checked checkboxes */
+.delete-checkbox:checked {
+    border: 1px solid black;
 }
 /* .box-content {
     margin: 20px;
 } */
 #mass_delete {
+    display: none;
+}
+#submit {
     display: none;
 }

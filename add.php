@@ -1,11 +1,24 @@
 <!-- Database -->
 <?php include "includes/db.php"; ?>
 
+<!-- This is to avoid error when refreshing header -->
+<?php
+ob_start();
+?>
+
 <!-- Header -->
 <?php include "includes/header.php"; ?>
 
 <!-- Navbar -->
-<?php include "includes/nav.php"; ?>
+<nav class="navbar border-bottom mx-5">
+    <a class="navbar-brand" href="#"><?php echo getPageTitle(); ?></a>
+    <form class="form-inline my-2 my-lg-0">
+		<label class="btn btn-outline-success my-2 my-sm-0" for="submit">Save</label>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a class="button" href="index.php">Cancel</a></button>
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" name='mass_delete' form="myForm" id='mass_delete' value="Update" type="submit"><?php echo getPageButton2(); ?></button> -->
+    </form>
+</nav>
+<!-- Form - Add products -->
 
 	<?php
         /* Dropdown selection stored */
@@ -88,9 +101,22 @@
 		toggleInputs();
 	</script>
 
-	<!-- This button should be moved to navbar -->
-    <input type="submit" name="submit" id="submit" value="Submit">
+	<!-- This button should be moved to navbar as Save button -->
+    <input class="hidden" type="submit" name="submit" id="submit" value="">
+
+<?php
+	if (isset($_POST['submit'])) {
+        header("Refresh:0; url=index.php");
+        exit;
+    } 
+?>
+
+
 </form>
+
+<?php
+ob_end_flush();
+?>
 
 <!-- Footer -->
 <?php include "includes/footer.php" ?>
