@@ -55,26 +55,28 @@ ob_start();
 
 <!-- Form -->
 <form action="<?php echo ($_SERVER['PHP_SELF']); ?>" method="POST" id="product_form">
-    <label for="SKU">SKU</label><input type="text" name="SKU" id="sku"><br>
-    <label for="Name">Name</label><input type="text" name="Name" id="name"><br>
-    <label for="Price">Price</label><input type="text" name="Price" id="price"><br>
-    <label for="typeSwitcher">Type Switcher</label>
-    <select name="typeSwitcher" id="typeSwitcher" style="max-width: 150px">
-		<option value="<?php echo $option0; ?>"><?php echo $option0; ?></option>
-		<option value="<?php echo $option1; ?>"><?php echo $option1; ?></option>
-		<option value="<?php echo $option2; ?>"><?php echo $option2; ?></option>
-		<option value="<?php echo $option3; ?>"><?php echo $option3; ?></option>
-	</select><br>
+    <div class="form_inputs"><label for="SKU">SKU</label><input type="text" name="SKU" id="sku"></div>
+    <div class="form_inputs"><label for="Name">Name</label><input type="text" name="Name" id="name"></div>
+    <div class="form_inputs"><label for="Price">Price</label><input type="text" name="Price" id="price"></div>
+    <div class="form_inputs">
+        <label for="typeSwitcher">Type Switcher</label>
+        <select name="typeSwitcher" id="typeSwitcher" style="max-width: 150px">
+                <option value="<?php echo $option0; ?>"><?php echo $option0; ?></option>
+                <option value="<?php echo $option1; ?>"><?php echo $option1; ?></option>
+                <option value="<?php echo $option2; ?>"><?php echo $option2; ?></option>
+                <option value="<?php echo $option3; ?>"><?php echo $option3; ?></option>
+            </select>
+    </div>
     <!-- Input for DVD -->
-    <div id="size_container" style="display:none">
-        <label for="Size">Size</label><input type="text" name="Size"><br>
+    <div class="form_inputs_hidden" id="size_container" style="display:none">
+        <label for="Size">Size</label><input type="text" name="Size">
     </div>
     <!-- Input for Book -->
-    <div id="weight_container" style="display:none">
-        <label for="Weight">Weight</label><input type="text" name="Weight"><br>
+    <div class="form_inputs_hidden" id="weight_container" style="display:none">
+        <label for="Weight">Weight</label><input type="text" name="Weight">
     </div>
     <!-- Input for Furniture -->
-    <div id="dimensions_container" style="display:none">
+    <div class="form_inputs_hidden" id="dimensions_container" style="display:none">
         <label for="dimHeight">Height</label><input type="text" name="dimHeight"><br>
         <label for="dimWidth">Width</label><input type="text" name="dimWidth"><br>
         <label for="dimLength">Length</label><input type="text" name="dimLength"><br>
@@ -99,6 +101,7 @@ ob_start();
 
 		document.getElementById("typeSwitcher").addEventListener("change", toggleInputs);
 		toggleInputs();
+
 	</script>
 
 	<!-- This button should be moved to navbar as Save button -->

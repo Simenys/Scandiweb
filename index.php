@@ -1,6 +1,7 @@
 <!-- Database conn -->
 <?php include "includes/db.php"; ?>
 
+<!-- This is to avoid error when refreshing header -->
 <?php
 ob_start();
 ?>

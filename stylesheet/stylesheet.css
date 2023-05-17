@@ -30,12 +30,29 @@
 .delete-checkbox:checked {
     border: 1px solid black;
 }
-/* .box-content {
-    margin: 20px;
-} */
 #mass_delete {
     display: none;
 }
 #submit {
     display: none;
 }
+#product_form {
+    align-self: center;
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    justify-content: space-between;
+} 
+.form_inputs {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+
+
